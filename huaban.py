@@ -8,9 +8,9 @@ from contextlib import closing
 chapters = requests.get(url='https://unsplash.com/napi/collections/'
                             '1065976/photos?page=1&per_page=20&order_by=latest', verify=False)
 
-print(chapters.text)
+# print(chapters.text)
 json_res = json.loads(chapters.text)
-print('开始下载了')
+print('开始下载了……')
 for url in json_res:
     src_id = url['id']
     download_url = url['links']['download']+'?force=true'
@@ -20,4 +20,4 @@ for url in json_res:
             for chunk in res.iter_content(chunk_size=1024):
                 if chunk:
                     fd.write(chunk)
-print('下载完了')
+print('下载完了……')
