@@ -50,6 +50,6 @@ def download_one_page(page):
 
 if __name__ == '__main__':
     logging.info('start to download the img')
-    for page in [40, 39]:
-        download_one_page(page)
+    for page_num in [40, 39]:
+        download_one_page(page_num)
     logging.info('all the images have been downloaded')
